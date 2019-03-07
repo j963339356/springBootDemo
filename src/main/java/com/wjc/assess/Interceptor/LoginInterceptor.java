@@ -23,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     //返回true继续向下走，返回false立刻中断执行
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         log.info("执行拦截器的preHandle方法");
-        //创建响应对象
+        //创建响应对象，全程都会用到，比如说某个地方可能会出错，就把出错信息写到报文头里，方便找错
         RequestHead requestHead = MessageHelp.getCommonRequest(httpServletRequest).getRequest();
         CommonResponse commonResponse = MessageHelp.createCommonResponse(requestHead.id,requestHead.service);
         CommonThreadLocal.set(commonResponse);
