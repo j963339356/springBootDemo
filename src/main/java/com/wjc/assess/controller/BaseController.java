@@ -1,8 +1,7 @@
 package com.wjc.assess.controller;
 
-import com.wjc.assess.utils.controller.CommonThreadLocal;
 import com.wjc.assess.utils.controller.MessageHelp;
-import com.wjc.assess.utils.dto.CommonRequest;
+import com.wjc.assess.utils.controller.dto.CommonRequest;
 
 import javax.servlet.http.HttpServletRequest;
 

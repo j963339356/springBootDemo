@@ -1,4 +1,4 @@
-package com.wjc.assess.utils.dto;
+package com.wjc.assess.utils.controller.dto;
 
 public class ResponseHead {
     public String id;       //当前请求的id

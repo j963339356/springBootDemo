@@ -1,4 +1,4 @@
-package com.wjc.assess.utils.dto;
+package com.wjc.assess.utils.controller.dto;
 
 public class QueryList {
     public Object queryData;    //查询条件

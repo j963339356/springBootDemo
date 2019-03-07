@@ -1,7 +1,8 @@
 package com.wjc.assess.config;
 
+import com.alibaba.fastjson.JSON;
 import com.wjc.assess.utils.controller.CommonThreadLocal;
-import com.wjc.assess.utils.dto.CommonResponse;
+import com.wjc.assess.utils.controller.dto.CommonResponse;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -22,7 +23,9 @@ public class ResponseDataAdvice implements ResponseBodyAdvice {
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
         CommonResponse response = CommonThreadLocal.getCommonResponse();
-        response.setBody(o);
-        return response;
+        if(response != null){
+            response.setBody(o);
+        }
+        return JSON.toJSON(response).toString();
     }
 }

@@ -1,10 +1,10 @@
-package com.wjc.assess.utils.dto;
+package com.wjc.assess.utils.controller.dto;
 
 public class CommonResponse {
     public ResponseHead response; //响应头
     public Object body;         //响应体
 
-    public ResponseHead getResponseHead() {
+    public ResponseHead getResponse() {
         return response;
     }
 

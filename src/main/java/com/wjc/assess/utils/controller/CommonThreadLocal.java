@@ -1,6 +1,6 @@
 package com.wjc.assess.utils.controller;
 
-import com.wjc.assess.utils.dto.CommonResponse;
+import com.wjc.assess.utils.controller.dto.CommonResponse;
 
 /*
  * ThreadLocal是一个为线程提供线程局部变量的工具类，为线程提供一个线程私有的变量副本，

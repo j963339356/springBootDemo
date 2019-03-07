@@ -1,10 +1,9 @@
 package com.wjc.assess.utils.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.wjc.assess.utils.dto.CommonRequest;
-import com.wjc.assess.utils.dto.CommonResponse;
-import com.wjc.assess.utils.dto.ResponseHead;
+import com.wjc.assess.utils.controller.dto.CommonRequest;
+import com.wjc.assess.utils.controller.dto.CommonResponse;
+import com.wjc.assess.utils.controller.dto.ResponseHead;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
