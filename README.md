@@ -1,8 +1,9 @@
 # springBootDemo
 SpringBoot模板
-整合了redis，mybatis
+整合了redis，mybatis，redis，分页
 
-可以返回特定json格式的数据，但是如果返回的是boolean值的话会有转义符
-
+可以返回特定json格式的数据
+登录状态验证
+全局异常处理
 
 完善中。。。。。
