@@ -1,13 +1,11 @@
 package com.wjc.assess.utils.redis;
 
+import com.wjc.assess.Exception.CustomException;
+import com.wjc.assess.Enum.ExceptionEnum;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -31,8 +29,8 @@ public class JedisUtil {
             return true;
         }catch (Exception e){
             e.printStackTrace();
+            throw new CustomException(ExceptionEnum.COMPONENT.getCode(),"redis存储出错");
         }
-        return false;
     }
 
     //键，值，有效时间（分钟）
@@ -42,8 +40,8 @@ public class JedisUtil {
             return true;
         }catch (Exception e){
             e.printStackTrace();
+            throw new CustomException(ExceptionEnum.COMPONENT.getCode(),"redis存储出错");
         }
-        return false;
     }
 
     //一次性设置多个<键,值>
@@ -53,8 +51,8 @@ public class JedisUtil {
             return true;
         }catch (Exception e){
             e.printStackTrace();
+            throw new CustomException(ExceptionEnum.COMPONENT.getCode(),"redis存储出错");
         }
-        return false;
     }
 
     //获取值
@@ -71,8 +69,8 @@ public class JedisUtil {
             return true;
         }catch (Exception e){
             e.printStackTrace();
+            throw new CustomException(ExceptionEnum.COMPONENT.getCode(),"redis存储出错");
         }
-        return false;
     }
 
     /*****     List操作opsForList   ******/

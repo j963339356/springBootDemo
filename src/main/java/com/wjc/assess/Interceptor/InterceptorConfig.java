@@ -1,5 +1,6 @@
 package com.wjc.assess.Interceptor;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,8 +13,14 @@ public class InterceptorConfig implements WebMvcConfigurer {
 //        registry.addViewController("/toLogin").setViewName("login");
 //    }
 
+    //必须要用注解，因为和他关联的属性用了@AutoWire，不能new新对象，那样会让AutoWire失效
+    @Bean
+    public LoginInterceptor LoginInterceptor(){
+        return new LoginInterceptor();
+    }
+
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截api后的所有
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/api/**");
+        registry.addInterceptor(LoginInterceptor()).addPathPatterns("/api/**");
     }
 }

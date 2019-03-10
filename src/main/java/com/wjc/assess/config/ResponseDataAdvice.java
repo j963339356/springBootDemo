@@ -13,19 +13,21 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /*
 拦截返回的数据，添加报文头
  */
-@ControllerAdvice
-public class ResponseDataAdvice implements ResponseBodyAdvice {
-    @Override
-    public boolean supports(MethodParameter methodParameter, Class aClass) {
-        return true;
-    }
-
-    @Override
-    public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
-        CommonResponse response = CommonThreadLocal.getCommonResponse();
-        if(response != null){
-            response.setBody(o);
-        }
-        return JSON.toJSON(response).toString();
-    }
-}
+//@ControllerAdvice
+//public class ResponseDataAdvice implements ResponseBodyAdvice {
+//    @Override
+//    public boolean supports(MethodParameter methodParameter, Class aClass) {
+//        return true;
+//    }
+//
+//    @Override
+//    public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
+//        CommonResponse response = CommonThreadLocal.getCommonResponse();
+//        if(response != null){
+//            response.setBody(o);
+//        }
+//        //释放线程
+//        CommonThreadLocal.free();
+//        return JSON.toJSON(response).toString();
+//    }
+//}

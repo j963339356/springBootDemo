@@ -39,6 +39,17 @@ public class MessageHelp {
         return response;
     }
 
+    //组装响应报文
+    public static <T>CommonResponse Result(T o){
+        CommonResponse response = CommonThreadLocal.getCommonResponse();
+        if(response != null){
+            response.setBody(o);
+        }
+        //释放线程
+        CommonThreadLocal.free();
+        return response;
+    }
+
     //读取流数据
     public static CommonRequest getCommonRequest(HttpServletRequest httpRequest){
         CommonRequest request = null;
@@ -83,5 +94,7 @@ public class MessageHelp {
         ret = ret.replaceAll("\\\\","");
         return ret;
     }
+
+    //创建
 
 }

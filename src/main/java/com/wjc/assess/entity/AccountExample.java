@@ -1,16 +1,17 @@
 package com.wjc.assess.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class CustomerExample {
+public class AccountExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CustomerExample() {
+    public AccountExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -105,62 +106,72 @@ public class CustomerExample {
         }
 
         public Criteria andIdIsNull() {
-            addCriterion("ID is null");
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
         public Criteria andIdIsNotNull() {
-            addCriterion("ID is not null");
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Integer value) {
-            addCriterion("ID =", value, "id");
+        public Criteria andIdEqualTo(String value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Integer value) {
-            addCriterion("ID <>", value, "id");
+        public Criteria andIdNotEqualTo(String value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Integer value) {
-            addCriterion("ID >", value, "id");
+        public Criteria andIdGreaterThan(String value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("ID >=", value, "id");
+        public Criteria andIdGreaterThanOrEqualTo(String value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Integer value) {
-            addCriterion("ID <", value, "id");
+        public Criteria andIdLessThan(String value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Integer value) {
-            addCriterion("ID <=", value, "id");
+        public Criteria andIdLessThanOrEqualTo(String value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Integer> values) {
-            addCriterion("ID in", values, "id");
+        public Criteria andIdLike(String value) {
+            addCriterion("id like", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Integer> values) {
-            addCriterion("ID not in", values, "id");
+        public Criteria andIdNotLike(String value) {
+            addCriterion("id not like", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Integer value1, Integer value2) {
-            addCriterion("ID between", value1, value2, "id");
+        public Criteria andIdIn(List<String> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("ID not between", value1, value2, "id");
+        public Criteria andIdNotIn(List<String> values) {
+            addCriterion("id not in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdBetween(String value1, String value2) {
+            addCriterion("id between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotBetween(String value1, String value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -301,6 +312,186 @@ public class CustomerExample {
 
         public Criteria andPasswordNotBetween(String value1, String value2) {
             addCriterion("password not between", value1, value2, "password");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeIsNull() {
+            addCriterion("sysCreateTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeIsNotNull() {
+            addCriterion("sysCreateTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeEqualTo(Date value) {
+            addCriterion("sysCreateTime =", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeNotEqualTo(Date value) {
+            addCriterion("sysCreateTime <>", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeGreaterThan(Date value) {
+            addCriterion("sysCreateTime >", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("sysCreateTime >=", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeLessThan(Date value) {
+            addCriterion("sysCreateTime <", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeLessThanOrEqualTo(Date value) {
+            addCriterion("sysCreateTime <=", value, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeIn(List<Date> values) {
+            addCriterion("sysCreateTime in", values, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeNotIn(List<Date> values) {
+            addCriterion("sysCreateTime not in", values, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeBetween(Date value1, Date value2) {
+            addCriterion("sysCreateTime between", value1, value2, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSyscreatetimeNotBetween(Date value1, Date value2) {
+            addCriterion("sysCreateTime not between", value1, value2, "syscreatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeIsNull() {
+            addCriterion("sysUpdateTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeIsNotNull() {
+            addCriterion("sysUpdateTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeEqualTo(Date value) {
+            addCriterion("sysUpdateTime =", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeNotEqualTo(Date value) {
+            addCriterion("sysUpdateTime <>", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeGreaterThan(Date value) {
+            addCriterion("sysUpdateTime >", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("sysUpdateTime >=", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeLessThan(Date value) {
+            addCriterion("sysUpdateTime <", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeLessThanOrEqualTo(Date value) {
+            addCriterion("sysUpdateTime <=", value, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeIn(List<Date> values) {
+            addCriterion("sysUpdateTime in", values, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeNotIn(List<Date> values) {
+            addCriterion("sysUpdateTime not in", values, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeBetween(Date value1, Date value2) {
+            addCriterion("sysUpdateTime between", value1, value2, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysupdatetimeNotBetween(Date value1, Date value2) {
+            addCriterion("sysUpdateTime not between", value1, value2, "sysupdatetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsIsNull() {
+            addCriterion("sysStatics is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsIsNotNull() {
+            addCriterion("sysStatics is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsEqualTo(Integer value) {
+            addCriterion("sysStatics =", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsNotEqualTo(Integer value) {
+            addCriterion("sysStatics <>", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsGreaterThan(Integer value) {
+            addCriterion("sysStatics >", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sysStatics >=", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsLessThan(Integer value) {
+            addCriterion("sysStatics <", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsLessThanOrEqualTo(Integer value) {
+            addCriterion("sysStatics <=", value, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsIn(List<Integer> values) {
+            addCriterion("sysStatics in", values, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsNotIn(List<Integer> values) {
+            addCriterion("sysStatics not in", values, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsBetween(Integer value1, Integer value2) {
+            addCriterion("sysStatics between", value1, value2, "sysstatics");
+            return (Criteria) this;
+        }
+
+        public Criteria andSysstaticsNotBetween(Integer value1, Integer value2) {
+            addCriterion("sysStatics not between", value1, value2, "sysstatics");
             return (Criteria) this;
         }
     }
