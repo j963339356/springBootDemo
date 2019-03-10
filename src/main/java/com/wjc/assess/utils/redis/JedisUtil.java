@@ -1,5 +1,6 @@
 package com.wjc.assess.utils.redis;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.wjc.assess.Exception.CustomException;
 import com.wjc.assess.Enum.ExceptionEnum;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class JedisUtil {
     public Boolean set(String key,String value){
         try{
             ValueOperations redis = redisTemplate.opsForValue();
-            redis.set(key,value,timeout);
+            set(key,value,timeout);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -36,7 +37,7 @@ public class JedisUtil {
     //键，值，有效时间（分钟）
     public Boolean set(String key, String value, long l){
         try{
-            redisTemplate.opsForValue().set(key,value,l,TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(key,value,l,TimeUnit.MINUTES);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -79,7 +80,7 @@ public class JedisUtil {
     /*****     公共操作        ******/
     //获取过期时间
     public long getExpire(String key){
-        return redisTemplate.getExpire(key,TimeUnit.SECONDS);
+        return redisTemplate.getExpire(key,TimeUnit.MINUTES);
     }
     //获取指定单位的过期时间
     public long getExpire(String key,TimeUnit timeUnit){
@@ -101,8 +102,11 @@ public class JedisUtil {
     }
 
     //设置过期时间（分钟）
+    public Boolean expire(String key){
+        return expire(key,timeout);
+    }
     public Boolean expire(String key,long timeout){
-        return redisTemplate.expire(key,timeout,TimeUnit.SECONDS);
+        return expire(key,timeout,TimeUnit.MINUTES);
     }
     //设置指定单位的过期时间
     public Boolean expire(String key,long timeout,TimeUnit timeUnit){

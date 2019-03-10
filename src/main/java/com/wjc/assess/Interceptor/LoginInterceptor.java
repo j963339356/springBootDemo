@@ -27,6 +27,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     private static final Logger log = LoggerFactory.getLogger(LoginInterceptor.class);
     @Autowired
     private JedisUtil redis;
+    @Autowired
+    private TokenUtil tokenUtil;
     //返回true继续向下走，返回false立刻中断执行
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         //设置响应的字符编码格式
@@ -51,7 +53,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         //否则验证token
-        String token = TokenUtil.checkToken(httpServletRequest);
+        String token = tokenUtil.checkToken(httpServletRequest);
 
         //如果存在token
         if(!redis.hasKey(token)){
