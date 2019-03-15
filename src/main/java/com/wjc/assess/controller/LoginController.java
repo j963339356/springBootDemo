@@ -11,11 +11,13 @@ import com.wjc.assess.utils.controller.MessageHelp;
 import com.wjc.assess.utils.controller.dto.QueryList;
 import com.wjc.assess.utils.redis.JedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.UUID;
 
@@ -52,6 +54,11 @@ public class LoginController extends BaseController {
         //注册账号
         dao.regist(regist);
         return MessageHelp.Result(true);
+    }
+
+    @GetMapping(value = "/Verify")
+    public Object Verify(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        return null;
     }
 
     @PostMapping(value = "/getList")
